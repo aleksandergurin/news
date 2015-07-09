@@ -11,7 +11,7 @@ def main():
     parser = ArgumentParser()
     parser.add_argument("-p", "--port", help="port number")
     args = parser.parse_args()
-    port = int(args.port or None)
+    port = int(args.port or 5000)
     app.run(port=port)
 
 if __name__ == "__main__":
