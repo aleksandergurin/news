@@ -1,0 +1,238 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, serif;
+}
+
+.container {
+    max-width: 900px;
+    min-width: 500px;
+    margin: 20px auto 20px;
+    background: #F6F6EF;
+}
+
+.header {
+    background-color: #FF6600;
+    padding: 1px 5px 2px 2px;
+    font-size: 14px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo {
+    margin-bottom: -5px;
+    width: 22px;
+    height: 22px;
+}
+
+.nav-left {
+    display: inline-block;
+}
+
+.nav-right {
+    display: inline-block;
+    float:right;
+    margin-top: 4px;
+}
+
+main {
+    padding: 20px;
+    border-bottom: 2px solid;
+    border-color: #FF6600;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 10px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #000;
+}
+
+.error,
+.error-message {
+    color: #911;
+    background-color: #FCDEDE;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: #D2B2B2;
+}
+
+.info,
+.info-message {
+    color: #137a36;
+    background-color: #eafced;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: #b1d2bb;
+}
+
+.info,
+.error {
+    font-size: 12px;
+    padding: 2px;
+    margin-bottom: 4px;
+}
+
+.info-message,
+.error-message {
+    font-size: 14px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.item {
+    padding: 7px 0;
+    font-size: 16px;
+}
+
+.post a {
+    text-decoration: none;
+    color: #000;
+}
+
+.hostname {
+    color: #828282;
+    font-size: 11px;
+}
+
+.subtext {
+    color: #828282;
+    font-size: 9px;
+}
+.subtext a {
+    text-decoration: none;
+    color: #828282;
+}
+.subtext a:hover {
+    text-decoration: underline;
+    color: #828282;
+}
+
+.comment {
+    font-size: 14px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.user-info {
+    font-size: 14px;
+    color: #828282;
+}
+.user-info a {
+    color: #000;
+}
+
+.add-comment-form {
+    width: 400px;
+    margin-top: 18px;
+}
+.add-comment-form * {
+    display: block;
+    margin-bottom: 18px;
+}
+.add-comment-form textarea {
+    background: #FFF;
+    padding:4px;
+    border-radius: 3px;
+    border: 1px solid #888888;
+    box-shadow: 0 1px 0 rgba(24, 24, 24,0.1);
+    color: #2d2d2d;
+    resize: none;
+    width: 100%;
+    height: 200px;
+}
+.add-comment-form textarea:focus {
+    border-color: #51A7E8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(81, 167, 232, 0.5);
+}
+
+.big-margin-bottom {
+    margin-bottom: 36px;
+}
+.little-margin-top {
+   margin-top: 15px;
+}
+
+.account-header {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+.account-form {
+    width: 300px;
+    display: table;
+}
+.account-form label {
+    margin-bottom: 5px;
+    display: block;
+}
+.account-form input {
+    display: block;
+}
+.input-wrapper {
+    position: relative;
+    margin-bottom: 16px;
+    margin-right: 10px;
+}
+.account-form input[type=password],
+.account-form input[type=text] {
+    background: #FFF;
+    padding:4px;
+    border-radius: 3px;
+    border: 1px solid #888888;
+    box-shadow: 0 1px 0 rgba(24, 24, 24,0.1);
+    color: #2d2d2d;
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 15px;
+    outline:none;
+}
+.account-form textarea {
+    background: #FFF;
+    padding:4px;
+    border-radius: 3px;
+    border: 1px solid #888888;
+    box-shadow: 0 1px 0 rgba(24, 24, 24,0.1);
+    color: #2d2d2d;
+    width: 100%;
+    height: 150px;
+    line-height: 16px;
+    font-size: 13px;
+    outline:none;
+    resize: none;
+}
+.account-form input[type=text]:focus,
+.account-form input[type=password]:focus,
+.account-form textarea:focus {
+    border-color: #51A7E8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(81, 167, 232, 0.5);
+}
+.account-form a {
+    color: #828282;
+}
+.readonly {
+    background-color: #f1f1f1 !important;
+}
+
+.pagination {
+    margin-top: 15px;
+}
+.pagination a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #494949;
+    background: #c9c9c9;
+    padding: 0 6px;
+}
+
+.topselect {
+    color: #FFF !important;
+}

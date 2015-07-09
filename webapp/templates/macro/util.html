@@ -1,0 +1,30 @@
+
+{% macro project_name() %}News{% endmacro %}
+
+{% macro show_messages(clazz) %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="{{ clazz }}">
+            {% for msg in messages %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
+{% endmacro %}
+
+
+{% macro render_errors(field) %}
+    {% if field.errors %}
+    <div class="error">
+        {% for err in field.errors %}
+            {{ err }}
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro select_class(sel, path) %}
+    {%- if sel == path %}class="topselect"{% endif -%}
+{% endmacro %}

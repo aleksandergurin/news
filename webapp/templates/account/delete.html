@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Delete account{% endblock %}
+{% block content %}
+    <h1 class="account-header">Are you sure you want to delete account?</h1>
+    <form action="/delete_account" method="post" class="account-form">
+        {{ form.csrf_token }}
+        {{ form.delete }}
+        <div  class="little-margin-top">
+            <a href="/profile">Cancel</a>
+        </div>
+    </form>
+{% endblock %}

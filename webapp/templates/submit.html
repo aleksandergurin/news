@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% from "macro/util.html" import render_errors %}
+{% block title %}Submit{% endblock %}
+{% block content %}
+    <h1 class="account-header">Submit</h1>
+    <form action="/submit" method="post" class="account-form">
+        {{ form.csrf_token }}
+
+        {{ render_errors(form.title) }}
+        <div class="input-wrapper">
+            {{ form.title(placeholder="Title") }}
+        </div>
+
+        {{ render_errors(form.url) }}
+        <div class="input-wrapper">
+            {{ form.url(placeholder="URL") }}
+        </div>
+
+        {{ render_errors(form.description) }}
+        <div class="input-wrapper">
+            {{ form.description(placeholder="Description") }}
+        </div>
+
+        {{ form.submit }}
+    </form>
+{% endblock %}

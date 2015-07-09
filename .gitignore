@@ -1,0 +1,14 @@
+# virtual environment
+venv/
+
+# sqlite databases
+*.sqlite
+
+# temporary directory
+tmp/
+
+# pycharm files
+.idea/
+
+*.pyc
+__pycache__

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% from "macro/util.html" import render_errors %}
+{% from "macro/util.html" import show_messages %}
+{% block title %}Your profile{% endblock %}
+{% block content %}
+    <h1 class="account-header">Your profile</h1>
+    <form action="/profile" method="post" class="account-form">
+        {{ show_messages("info-message") }}
+
+        {{ form.csrf_token }}
+
+        {{ form.username.label }}
+        <div class="input-wrapper">
+            {{ form.username(readonly=true, value=current_user.username, class="readonly") }}
+        </div>
+
+        {{ render_errors(form.email) }}
+        {{ form.email.label }}
+        <div class="input-wrapper">
+            {{ form.email(value=current_user.email) }}
+        </div>
+
+        {{ render_errors(form.about) }}
+        {{ form.about.label }}
+        <div class="input-wrapper">
+            {{ form.about}}
+        </div>
+
+        {{ form.update }}
+
+        {#<div class="little-margin-top">#}
+        {#    <a href="/delete_account">Delete my account</a>#}
+        {#</div>#}
+
+        <div class="little-margin-top">
+            <a href="/change_password">Change password</a>
+        </div>
+    </form>
+{% endblock %}

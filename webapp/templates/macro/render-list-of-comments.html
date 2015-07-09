@@ -1,0 +1,14 @@
+{% macro render_comments(comments) %}
+{% if comments%}
+{% for comment in comments %}
+<div class="item">
+    <div class="subtext">
+        <a href="/user/{{ comment.author_id }}">{{ comment.author.username }}</a>
+        <a href="/comment/{{ comment.id }}">{{ comment.created }}</a> |
+        on: <a href="/post/{{ comment.post.id }}">{{ comment.post.title }}</a>
+    </div>
+    <div class="comment">{{ comment.text }}</div>
+</div>
+{% endfor %}
+{% endif %}
+{% endmacro %}

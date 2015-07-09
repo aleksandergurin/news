@@ -1,0 +1,23 @@
+{% macro render_posts(posts) %}
+{% if posts %}
+{% for post in posts %}
+<div class="item">
+    <div class="post">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        {% if post.url_hostname %}
+            <span class="hostname">({{ post.url_hostname }})</span>
+        {% endif %}
+    </div>
+    <div class="subtext">
+        by <a href="/user/{{ post.author_id }}">{{ post.author.username }}</a>
+        <a href="/post/{{ post.id }}">{{ post.created }}</a> |
+        {% if post.number_of_comments > 0  %}
+            <a href="/post/{{ post.id }}">{{ post.number_of_comments }} comments</a>
+        {% else %}
+            <a href="/post/{{ post.id }}">discuss</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endmacro %}

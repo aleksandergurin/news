@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+{% from "macro/render-list-of-comments.html" import render_comments %}
+{% block title %}{{ user.username }}'s comments{% endblock %}
+{# we need to reverse user.comment, so that recently added comments goes first #}
+{% block content %}{{ render_comments(user.comments|reverse) }}{% endblock %}

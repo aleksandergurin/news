@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% from "macro/util.html" import show_messages %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h1 class="account-header">Login</h1>
+    <form action="/login" method="post" class="account-form">
+        {{ show_messages("error-message") }}
+
+        {{ form.csrf_token }}
+        {{ form.next_page }}
+
+        <div class="input-wrapper">
+            {{ form.username_or_email(placeholder="Username or email") }}
+        </div>
+
+        <div class="input-wrapper">
+            {{ form.password(placeholder="Password") }}
+        </div>
+
+        {{ form.submit }}
+    </form>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% from "macro/util.html" import select_class %}
+    <div class="container">
+        <div class="header">
+            <nav>
+                <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" class="logo"/></a>
+                <div class="nav-left">
+                    <a href="/"><b>News</b></a>
+                    <a href="/new" {{ select_class(sel, 'new') }}>new</a> |
+                    <a href="/comments" {{ select_class(sel, 'comments') }}>comments</a> |
+                    <a href="/show" {{ select_class(sel, 'show') }}>show</a> |
+                    <a href="/ask" {{ select_class(sel, 'ask') }}>ask</a> |
+                    <a href="/submit" {{ select_class(sel, 'submit') }}>submit</a>
+                </div>
+                <div class="nav-right">
+                {% if current_user.is_authenticated() %}
+                    <a href="/profile" {{ select_class(sel, 'profile') }}>{{ current_user.username }}</a> |
+                    <a href="/logout">logout</a>
+                {% else %}
+                    <a href="/signup" {{ select_class(sel, 'signup') }}>signup</a> |
+                    <a href="/login" {{ select_class(sel, 'login') }}>login</a>
+                {% endif %}
+                </div>
+            </nav>
+        </div>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <div class="footer">
+            <a href="{{ url_for('static', filename='html/faq.html') }}">faq</a> |
+            <a href="https://github.com/aleksandergurin">source code</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

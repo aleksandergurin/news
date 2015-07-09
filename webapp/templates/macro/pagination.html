@@ -1,0 +1,9 @@
+{% macro pagination(prev, next, prefix) %}
+{% if next or prev %}
+    <div class="pagination">
+        {% if prev %}<a href="{{ prefix }}/{{ prev.id }}">prev</a>{% endif %}
+        {% if prev and next %} | {% endif %}
+        {% if next %}<a href="{{ prefix }}/{{ next.id }}">next</a>{% endif %}
+    </div>
+{% endif %}
+{% endmacro %}

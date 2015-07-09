@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% from "macro/render-list-of-comments.html" import render_comments %}
+{% from "macro/pagination.html" import pagination %}
+{% block title %}Comments{% endblock %}
+{% block content %}
+    {{ render_comments(comments) }}
+    {{ pagination(prev, next, "/comments") }}
+{% endblock %}

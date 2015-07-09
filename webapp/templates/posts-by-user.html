@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+{% from "macro/render-list-of-posts.html" import render_posts %}
+{% block title %}{{ user.username }}'s submissions{% endblock %}
+{# we need to reverse user.post, so that recently added posts goes first #}
+{% block content %}{{ render_posts(user.posts|reverse) }}{% endblock %}

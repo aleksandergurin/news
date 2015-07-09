@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Comments{% endblock %}
+{% block content %}
+    <div class="user-info">
+        <table>
+            <tr><td>user:</td><td>{{ user.username }}</td></tr>
+            <tr><td>created:</td><td>{{ user.created }}</td></tr>
+            <tr><td>about:</td><td>{% if user.about %}{{ user.about }}{% endif %}</td></tr>
+            <tr><td></td><td><a href="/post/user/{{ user.id }}">submissions</a></td></tr>
+            <tr><td></td><td><a href="/comment/user/{{ user.id }}">comments</a></td></tr>
+        </table>
+    </div>
+{% endblock %}

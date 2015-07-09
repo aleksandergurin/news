@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% from "macro/util.html" import project_name %}
+{% from "macro/util.html" import render_errors %}
+{% block title %}Join {{ project_name() }}{% endblock %}
+{% block content %}
+    <h1 class="account-header">Join {{ project_name() }}</h1>
+    <form action="/signup" method="post" class="account-form">
+        {{ form.csrf_token }}
+
+        {{ render_errors(form.username) }}
+        <div class="input-wrapper">
+            {{ form.username(placeholder="Username") }}
+        </div>
+
+        {{ render_errors(form.email) }}
+        <div class="input-wrapper">
+            {{ form.email(placeholder="Email (optional)") }}
+        </div>
+
+        {{ render_errors(form.password) }}
+        <div class="input-wrapper">
+            {{ form.password(placeholder="Password") }}
+        </div>
+
+        {{ render_errors(form.password_again) }}
+        <div class="input-wrapper">
+            {{ form.password_again(placeholder="Password confirmation") }}
+        </div>
+
+        {{ form.submit }}
+    </form>
+{% endblock %}
